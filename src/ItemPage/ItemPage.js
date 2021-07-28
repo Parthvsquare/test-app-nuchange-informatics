@@ -1,27 +1,37 @@
-import { useEffect }  from 'react'
+
 import ItemCard from '../Components/ItemCard/ItemCard'
 import styles from './ItemPage.module.css'
+import data from '../data/file.json'
 
 
 function ItemPage() {
-    useEffect(() => {
-        const fetchItems = async() =>
-        await fetch(
-            'public/jsoninput.json'
-        )
-        .then((response) => response.text())
-        .then((data)=>{
-             console.log(data);
+    // console.log(data);
+    // useEffect(() => {
+    //     const fetchItems = async() =>
+    //     await fetch(
+    //         '../data/file.json'
+    //     )
+    //     .then((response) => response.text())
+    //     .then((data)=>{
+    //          console.log(data);
 
-        });
-        // return () => {
-        //     cleanup
-        // }
-        fetchItems();
-    }, []);
+    //     });
+    //     // return () => {
+    //     //     cleanup
+    //     // }
+    //     fetchItems();
+    // }, []);
     return (
         <div className={styles.itemPage}>
-            <ItemCard/>
+            <div className="itemPage__itemlist">
+                {data.map((itemInfo)=>{
+                    return  (
+                        <div className="itemPage__cards" key={itemInfo.id}>
+                            <ItemCard image= {itemInfo.image} title={itemInfo.name} price={itemInfo.price} instock={itemInfo.available}/>
+                        </div>
+                    )
+                })}
+            </div>
             <div className={styles.item__sort}>
                 {/* itemsort */}
                 <h2>Filter</h2>

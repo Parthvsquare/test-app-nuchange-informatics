@@ -5,7 +5,7 @@ import styles from './ItemCard.module.css'
 function ItemCard({image, title, price, instock}) {
     return (
         <div className={styles.itemCard}>
-            <img src="image" alt="" />
+            <img src={image} alt="" />
             <div className={styles.itemCard__right}>
                 <h2>{title}</h2>
                 <h3>{price}</h3>

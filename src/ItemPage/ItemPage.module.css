@@ -1,3 +1,12 @@
 .itemPage {
-  padding: 10px;
+  /* padding: 10px; */
+  display: flex;
+}
+
+.itemPage__itemlist {
+  flex: 0.5;
+}
+
+.item__sort {
+  flex: 0.5;
 }
