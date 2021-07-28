@@ -5,9 +5,9 @@ import styles from './ItemPage.module.css'
 
 function ItemPage() {
     return (
-        <div className='styles.itemPage'>
+        <div className='styles.styles.itemPage'>
             <ItemCard/>
-            <div className="item__sort">
+            <div className="styles.item__sort">
                 {/* itemsort */}
                 <h2>Filter</h2>
                 {/* In stock

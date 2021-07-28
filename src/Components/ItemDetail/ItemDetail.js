@@ -5,18 +5,18 @@ function ItemDetail({image, title, price, vender, instock}) {
     return (
         <div className="styles.itemDetail">
             <img src="image" alt="" />
-            <div className="itemDetail__title">
-                <div className="itemDetail__title--name">
+            <div className="styles.itemDetail__title">
+                <div className="styles.itemDetail__title--name">
                     {title}
                 </div>
-                <div className="itemDetail__title--price">
+                <div className="styles.itemDetail__title--price">
                     {price}
                 </div>
             </div>
-            <div className="itemDetail__venderName">
+            <div className="styles.itemDetail__venderName">
                 <p>{vender}</p>
             </div>
-            <div className="itemDetail__addtocardbtn">
+            <div className="styles.itemDetail__addtocardbtn">
                 <form>
                     <button type='submit'>Add to cart</button>
                 </form>
