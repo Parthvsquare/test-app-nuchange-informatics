@@ -7,11 +7,12 @@ function ItemPage() {
     useEffect(() => {
         const fetchItems = async() =>
         await fetch(
-            `https://pastebin.com/a87nf6Z9`
+            'public/jsoninput.json'
         )
-        .then((res) => res.json())
+        .then((response) => response.text())
         .then((data)=>{
-            console.log(data);
+             console.log(data);
+
         });
         // return () => {
         //     cleanup
