@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './Header/Header';
-import ItemCard from './ItemCard/ItemCard';
+import ItemPage from './ItemPage/ItemPage';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <ItemCard/>
+      <ItemPage/>
     </div>
   );
 }
