@@ -1,4 +1,3 @@
-import { response } from 'express';
 import { useEffect }  from 'react'
 import ItemCard from '../Components/ItemCard/ItemCard'
 import styles from './ItemPage.module.css'
@@ -10,7 +9,7 @@ function ItemPage() {
         await fetch(
             `https://pastebin.com/a87nf6Z9`
         )
-        .then((res) = res.json())
+        .then((res) => res.json())
         .then((data)=>{
             console.log(data);
         });
