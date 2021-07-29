@@ -7,6 +7,7 @@ import data from '../data/file.json'
 
 function ItemPage() {
     const [clickedstate, setClickedstate] = useState([0]);
+    const [childunmount, setChildunmount] = useState(false);
     // console.log(data);
     // useEffect(() => {
     //     const fetchItems = async() =>
@@ -54,6 +55,7 @@ function ItemPage() {
                                title={itemNumber.name}
                                price={itemNumber.price}
                                instock={itemNumber.available}
+                            //    unmountfn{...childUnmount}
                                />
                                </div>
                            )
@@ -73,7 +75,12 @@ function ItemPage() {
     )
     function whichItemClicked(id){
         console.log(id);
+        setChildunmount(true)
         setClickedstate(id)
+    }
+
+    function childUnmount(){
+        setChildunmount(true)
     }
     
 }
