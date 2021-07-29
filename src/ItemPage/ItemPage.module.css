@@ -10,3 +10,7 @@
 .item__sort {
   flex: 0.5;
 }
+
+.itemPage__right {
+  position: fixed;
+}

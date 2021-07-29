@@ -45,32 +45,42 @@ function ItemPage() {
                     )
                 })}
             </div>
-            {clickedstate > 0
-                ?
-                <div>
-                    {data.map((itemNumber)=>{
-                           return(
-                               <div className="itemPage__detail" key={itemNumber.id} >
-                               <ItemDetail  
-                               title={itemNumber.name}
-                               price={itemNumber.price}
-                               instock={itemNumber.available}
-                            //    unmountfn{...childUnmount}
-                               />
-                               </div>
-                           )
-                       })
-                   }
-                </div>
-                :
-            <div className={styles.item__sort}>
-                {/* itemsort */}
-                <h2>Filter</h2>
-                {/* In stock
-                Fruit
-                Vegetable */}
-                </div>
-            }
+            <div className="itemPage__right">
+                {clickedstate > 0
+                    ?
+                    <div>
+                        {data.map((itemNumber)=>{
+                            return(
+                                <div className="itemPage__detail" key={itemNumber.id} >
+                                    {
+                                        itemNumber.id == clickedstate 
+                                        ?  
+                                            <ItemDetail
+                                                image= {itemNumber.image}  
+                                                title={itemNumber.name}
+                                                price={itemNumber.price}
+                                                instock={itemNumber.available}
+                                                vender={itemNumber.vendor}
+                                                //    unmountfn{...childUnmount}
+                                                /> 
+                                            : null
+                                }
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
+                    :
+                <div className={styles.item__sort}>
+                    {/* itemsort */}
+                    <h2>Filter</h2>
+                    {/* In stock
+                    Fruit
+                    Vegetable */}
+                    </div>
+                }
+            </div>
+            
         </div>
     )
     function whichItemClicked(id){

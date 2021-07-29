@@ -8,7 +8,7 @@ function ItemCard({image, title, price, instock}) {
             <img src={image} alt="" />
             <div className={styles.itemCard__right}>
                 <h2>{title}</h2>
-                <h3>{price}</h3>
+                <h3>{price}Rs.</h3>
                 {instock ? <p>item in stock</p> : <p>Not in stock</p>}
             </div>
         </div>

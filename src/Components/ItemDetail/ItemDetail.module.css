@@ -1,3 +1,32 @@
 .itemDetail {
   padding: 10px;
+  margin-top: 4vw;
+  box-sizing: border-box;
+  border: 2px solid var(--primarycolor);
+  border-radius: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.itemDetail > img {
+  height: 20vw;
+  /* width: 30vw; */
+  padding: 2vw;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primarycolor);
+  transition: 0.3s;
+}
+button:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
