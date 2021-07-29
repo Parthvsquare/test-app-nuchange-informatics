@@ -8,7 +8,8 @@ import data from '../data/file.json'
 function ItemPage() {
     const [clickedstate, setClickedstate] = useState([0]);
     const [childunmount, setChildunmount] = useState(false);
-    // console.log(data);
+    const [vegetablecheck, setVegetablecheck] = useState(true);
+    const [fruitscheck, setFruitscheck] = useState(false);
     // useEffect(() => {
     //     const fetchItems = async() =>
     //     await fetch(
@@ -25,10 +26,6 @@ function ItemPage() {
     //     fetchItems();
     // }, []);
 
-    // function whichItemClicked(id){
-
-    //     console.log(id)
-    // }
     return (
         
         <div className={styles.itemPage}>
@@ -46,7 +43,7 @@ function ItemPage() {
                 })}
             </div>
             <div className="itemPage__right">
-                {clickedstate > 0
+                { childunmount 
                     ?
                     <div>
                         {data.map((itemNumber)=>{
@@ -71,12 +68,26 @@ function ItemPage() {
                     }
                     </div>
                     :
-                <div className={styles.item__sort}>
-                    {/* itemsort */}
-                    <h2>Filter</h2>
-                    {/* In stock
-                    Fruit
-                    Vegetable */}
+                    <div className={styles.item__sort}>
+                        {/* itemsort */}
+                        <h2>Filter</h2>
+                        <input
+                            type="checkbox"
+                            id="topping"
+                            name="topping"
+                            value="Paneer"
+                        //   checked={setVegetablecheck(true)}
+                           onChange={vegetablecheckbox}
+                        />Vegetable<br />
+                        <input
+                            type="checkbox"
+                            id="topping"
+                            name="topping"
+                            value="Paneer"
+                        //    checked={setFruitscheck(true)}
+                            onChange={fruitscheckbox}
+                        />Fruits
+
                     </div>
                 }
             </div>
@@ -86,13 +97,21 @@ function ItemPage() {
         </div>
     )
     function whichItemClicked(id){
-        console.log(id);
-        setChildunmount(true)
+        // console.log(id);
+        setChildunmount(!childunmount)
         setClickedstate(id)
+    }
+    function vegetablecheckbox(e){
+        setVegetablecheck(!vegetablecheck)
+        console.log(vegetablecheck)
+    }
+    function fruitscheckbox(e){
+        setFruitscheck(!fruitscheck)
+        console.log(fruitscheck)
     }
 
     // function childUnmount(){
-    //     setChildunmount(true)
+    //     setChildunmount(!childunmount)
     // }
     
 }

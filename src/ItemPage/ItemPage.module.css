@@ -8,7 +8,14 @@
 }
 
 .item__sort {
-  flex: 0.5;
+  display: block;
+  position: fixed;
+}
+.item__sort > h2 {
+  margin-top: 4.5vw;
+}
+.item__sort > input {
+  margin-bottom: 20px;
 }
 
 .itemPage__right {

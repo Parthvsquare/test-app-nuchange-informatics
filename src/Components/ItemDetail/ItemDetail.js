@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from './ItemDetail.module.css'
+import CancelIcon from '@material-ui/icons/Cancel';
 
 function ItemDetail({image, title, price, vender, instock}) {
     return (
         <div className={styles.itemDetail}>
+            <div className={styles.itemDetail__cancelbtn}>
+                <CancelIcon className={styles.cancel__icon} />
+            </div>
+            
             <img src={image} alt="" />
             <div className={styles.title}>
                 <div className={styles.title__name}>

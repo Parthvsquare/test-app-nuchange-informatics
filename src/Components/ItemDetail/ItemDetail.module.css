@@ -30,7 +30,13 @@ button {
 button:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
-.itemDetail .cancel__icon {
-  color: red;
-  float: right;
+.cancel__icon {
+  color: black;
+  /* position: relative; */
+}
+
+.itemDetail__cancelbtn {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
 }
