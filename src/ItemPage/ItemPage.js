@@ -53,7 +53,7 @@ function ItemPage() {
                             return(
                                 <div className="itemPage__detail" key={itemNumber.id} >
                                     {
-                                        itemNumber.id == clickedstate 
+                                        itemNumber.id === clickedstate 
                                         ?  
                                             <ItemDetail
                                                 image= {itemNumber.image}  
@@ -80,7 +80,9 @@ function ItemPage() {
                     </div>
                 }
             </div>
-            
+            <div className="tp">
+                {childunmount}
+            </div>
         </div>
     )
     function whichItemClicked(id){
@@ -89,9 +91,9 @@ function ItemPage() {
         setClickedstate(id)
     }
 
-    function childUnmount(){
-        setChildunmount(true)
-    }
+    // function childUnmount(){
+    //     setChildunmount(true)
+    // }
     
 }
 
