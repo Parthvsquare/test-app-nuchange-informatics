@@ -6,7 +6,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 // import ItemsinCart from '../../data/ItemsinCart';
 
 
-function ItemDetail({image, title, price, vender, instock, childunmount}) {
+function ItemDetail({image, title, price, vender, instock, childunmountfn}) {
     const [itemquantity, setItemquantity] = useState(1)
     const editJsonFile = require("edit-json-file");
     let file = editJsonFile('../itemsincart.json');
@@ -14,21 +14,22 @@ function ItemDetail({image, title, price, vender, instock, childunmount}) {
     return (
         <div className={styles.itemDetail}>
             <div className={styles.itemDetail__cancelbtn}>
-                <CancelIcon className={styles.cancel__icon} onClick={childunmount}/>
+                <CancelIcon className={styles.cancel__icon} onClick={childunmountfn}/>
             </div>
             
             <img src={image} alt="" />
             <div className={styles.title}>
                 <div className={styles.title__name}>
-                    {title}
+                    <h2>{title}</h2>
                 </div>
                 <div className={styles.title__price}>
-                    {price}
+                    <h2>{price} Rs </h2>
                 </div>
             </div>
-            {instock ? <p>item in stock</p> : <p>Not in stock</p>}
+            <div className={styles.itemDetail__bottom}>
+            {instock ? <h4>item in stock</h4> : <h4>Not in stock</h4>}
             <div className={styles.venderName}>
-                <p>{vender}</p>
+                <h3>{vender}</h3>
             </div>
             <div className={styles.addtocart}>
                 {/* plus minus */}
@@ -43,11 +44,14 @@ function ItemDetail({image, title, price, vender, instock, childunmount}) {
                     <p>
                         {itemquantity}
                     </p>
-                    <AddIcon className={styles.counters} onClick={itemincrement}/>
+                    <AddIcon className={styles.counters__increment} onClick={itemincrement}/>
                 </div>
+                <div className={styles.addtocart__btn}>
                 <form>
                     <button onClick={addtocartfn} type='submit'>Add to cart</button>
                 </form>
+                </div>
+            </div>
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
 // import AddToCartPage from "../AddToCartPage/AddToCartPage.js";
 
-function Header() {
+function Header({wantCart}) {
     return (
         <div className={styles.header}>
             <div className={styles.header__title}>
@@ -17,11 +17,16 @@ function Header() {
                 <SearchIcon />
                 </div>
             </div>
+            
             <div className={styles.header__addtocart}>
-                {/* <ShoppingCartIcon className={styles.icon}/> */}
-            <Link  to = "/addToCartPage">
-                <ShoppingCartIcon className={styles.icon}/>
-            </Link>
+            { wantCart 
+                ?
+                <Link  to = "/addToCartPage">
+                    <ShoppingCartIcon className={styles.icon}/>
+                </Link>
+                : 
+                <p>You are in Cart</p>
+            }
             </div>
         </div>
     )

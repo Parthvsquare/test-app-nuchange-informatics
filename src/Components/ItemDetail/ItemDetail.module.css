@@ -1,4 +1,5 @@
 .itemDetail {
+  width: 25vw;
   height: auto;
   padding: 15px;
   margin-top: 4vw;
@@ -17,8 +18,9 @@
 }
 
 .itemDetail > img {
-  height: 20vw;
+  object-fit: contain;
   /* width: 30vw; */
+
   padding: 10px;
 }
 button {
@@ -51,18 +53,25 @@ button:hover {
 
 .addtocart__quantity {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 30%;
+  justify-content: center;
   align-items: center;
 }
 .addtocart__quantity > p {
   box-sizing: border-box;
   padding: 0 10px;
-  box-shadow: inset 5px 0px 10px #a8a8a8;
 }
 .counters {
-  /* width: 30px; */
-  box-sizing: border-box;
   padding: 5px;
-  box-shadow: 0 0 15px #a8a8a8;
+  border-right: 2px solid var(--primarycolor);
+}
+.counters:hover {
+  background-color: rgba(209, 247, 171, 0.979);
+}
+.counters__increment {
+  padding: 5px;
+  border-left: 2px solid var(--primarycolor);
+}
+.counters__increment:hover {
+  background-color: rgba(209, 247, 171, 0.979);
 }

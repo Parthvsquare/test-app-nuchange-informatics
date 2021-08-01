@@ -6,16 +6,15 @@ import AddToCartPage from './AddToCartPage/AddToCartPage';
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
-        <Route path='/' component={Header} exact />
+      <div className="App">
+        <Route path='/'  render={() => (<Header wantCart={true} />)} exact />
         <Route path='/' component={ItemPage} exact />
         <Route path='/addToCartPage' component={AddToCartPage} />
          {/* <Header/>
          <ItemPage/> */}
+      </div>
       </BrowserRouter>
-      
-    </div>
   );
 }
 

@@ -33,7 +33,7 @@ function ItemPage() {
             <div className="itemPage__itemlist">
                 {/* sort */}
                 {
-                    fruitscheck || vegetablecheck 
+                    (fruitscheck || vegetablecheck) && (!(fruitscheck && vegetablecheck))
                     ?
                     <div className="itemPage__fruits">
                     {data.map((itemInfo)=>{
@@ -59,7 +59,7 @@ function ItemPage() {
                 }
                 {/* the default list */}
                 {
-                    fruitscheck === false && vegetablecheck === false 
+                    (fruitscheck === false && vegetablecheck === false) || (fruitscheck === true && vegetablecheck === true)
                     ?
                     
                  <div className="itemPage__default">
@@ -97,7 +97,7 @@ function ItemPage() {
                                                 instock={itemNumber.available}
                                                 vender={itemNumber.vendor}
                                                 //    unmountfn{...childUnmount}
-                                                childunmount={childUnmount}
+                                                childunmountfn={childUnmount}
                                                 /> 
                                             : null
                                 }
@@ -109,7 +109,7 @@ function ItemPage() {
                     :
                     <div className={styles.item__sort}>
                         {/* itemsort */}
-                        <h2>Filter</h2>
+                        <h1>Filter</h1>
                         <input
                             type="checkbox"
                             id="topping"
@@ -129,9 +129,6 @@ function ItemPage() {
 
                     </div>
                 }
-            </div>
-            <div className="tp">
-                {childunmount}
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ function AddToCartPage() {
     
     return (
         <div className={styles.addtocart}>
-              <Header/>
+              <Header wantCart={false}/>
               <div className={styles.addtocart__items}>
                     {data.map((itemInfo)=>{
                     return  (

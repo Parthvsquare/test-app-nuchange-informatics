@@ -19,23 +19,26 @@
 .header__search {
   display: flex;
   box-sizing: border-box;
-  width: 35%;
+  width: 30%;
   border: 1px solid chartreuse;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .header__search > input {
   border: none;
   outline: none;
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px;
 }
 .header__title > h1 {
   font-size: 1.5rem;
   font-weight: 800;
 }
 .header__search__icon {
-  display: flex;
+  position: relative;
   box-sizing: border-box;
   background-color: chartreuse;
-  padding: 0.1rem;
+  padding: 2px 5px;
   color: white;
 }
 .header__search__icon:hover {
