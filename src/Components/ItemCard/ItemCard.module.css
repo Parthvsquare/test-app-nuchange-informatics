@@ -5,10 +5,10 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  border: 2px solid var(--primarycolor);
-  border-radius: 10px;
+  border-radius: 25px;
   margin: 5vw;
   padding: 2vw;
+  box-shadow: 15px 15px 41px #7b7b7b, -15px -15px 41px #ffffff;
 }
 .itemCard > img {
   object-fit: contain;

@@ -12,6 +12,10 @@
 .header__title {
   display: flex;
 }
+.link {
+  text-decoration: none;
+  text-decoration-line: none;
+}
 .header__search {
   display: flex;
   box-sizing: border-box;

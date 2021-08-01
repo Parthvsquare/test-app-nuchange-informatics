@@ -9,7 +9,7 @@ function Header() {
     return (
         <div className={styles.header}>
             <div className={styles.header__title}>
-                <h1>Product</h1>
+            <Link className={styles.link} to='/' >    <h1>Product</h1></Link>
             </div>
             <div className={styles.header__search}>
                 <input type="text" />

@@ -97,6 +97,7 @@ function ItemPage() {
                                                 instock={itemNumber.available}
                                                 vender={itemNumber.vendor}
                                                 //    unmountfn{...childUnmount}
+                                                childunmount={childUnmount}
                                                 /> 
                                             : null
                                 }
@@ -151,9 +152,9 @@ function ItemPage() {
         setWhichsort("Fruits")
     }
 
-    // function childUnmount(){
-    //     setChildunmount(!childunmount)
-    // }
+    function childUnmount(){
+        setChildunmount(!childunmount)
+    }
     
 }
 

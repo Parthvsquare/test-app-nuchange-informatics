@@ -1,13 +1,13 @@
 .itemDetail {
-  padding: 10px;
+  height: auto;
+  padding: 15px;
   margin-top: 4vw;
   box-sizing: border-box;
-  border: 2px solid var(--primarycolor);
-  border-radius: 10px;
-  height: auto;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   position: fixed;
+  box-shadow: 15px 15px 41px #7b7b7b, -15px -15px 41px #ffffff;
 }
 
 .title {
@@ -19,11 +19,14 @@
 .itemDetail > img {
   height: 20vw;
   /* width: 30vw; */
-  padding: 2vw;
+  padding: 10px;
 }
 button {
+  /* float: right; */
+  width: 100%;
   padding: 10px 20px;
   border: none;
+  border-radius: 10px;
   background-color: var(--primarycolor);
   transition: 0.3s;
 }
@@ -36,7 +39,30 @@ button:hover {
 }
 
 .itemDetail__cancelbtn {
-  display: flex;
-  flex-direction: row-reverse;
   width: 100%;
+}
+
+.addtocart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addtocart__quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.addtocart__quantity > p {
+  box-sizing: border-box;
+  padding: 0 10px;
+  box-shadow: inset 5px 0px 10px #a8a8a8;
+}
+.counters {
+  /* width: 30px; */
+  box-sizing: border-box;
+  padding: 5px;
+  box-shadow: 0 0 15px #a8a8a8;
 }
