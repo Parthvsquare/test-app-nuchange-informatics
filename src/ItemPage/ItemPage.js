@@ -10,6 +10,7 @@ function ItemPage() {
     const [childunmount, setChildunmount] = useState(false);
     const [vegetablecheck, setVegetablecheck] = useState(false);
     const [fruitscheck, setFruitscheck] = useState(false);
+    const [whichsort, setWhichsort] = useState('');
     // useEffect(() => {
     //     const fetchItems = async() =>
     //     await fetch(
@@ -30,32 +31,9 @@ function ItemPage() {
         
         <div className={styles.itemPage}>
             <div className="itemPage__itemlist">
+                {/* sort */}
                 {
-                    vegetablecheck ?
-                    <div className="itemPage__vegies">
-                {data.map((itemInfo)=>{
-                    return  (
-                        <div className="itemPage__cards" key={itemInfo.id}
-                        onClick={() => whichItemClicked(itemInfo.id)}>
-                            {
-                                itemInfo.category === "Vegetables"
-                                ?
-                                <ItemCard image= {itemInfo.image}
-                                title={itemInfo.name}
-                                price={itemInfo.price}
-                                instock={itemInfo.available}/>
-                                :null
-                            }
-                            
-                        </div>
-                    )
-                })}
-                </div>
-                :
-                null
-                }
-                {
-                    fruitscheck 
+                    fruitscheck || vegetablecheck 
                     ?
                     <div className="itemPage__fruits">
                     {data.map((itemInfo)=>{
@@ -63,7 +41,7 @@ function ItemPage() {
                             <div className="itemPage__cards" key={itemInfo.id}
                             onClick={() => whichItemClicked(itemInfo.id)}>
                                 {
-                                    itemInfo.category === "Fruits"
+                                    itemInfo.category === whichsort
                                     ?
                                     <ItemCard image= {itemInfo.image}
                                     title={itemInfo.name}
@@ -79,12 +57,13 @@ function ItemPage() {
                     :
                     null
                 }
+                {/* the default list */}
                 {
-                    fruitscheck ===false && vegetablecheck ===false 
+                    fruitscheck === false && vegetablecheck === false 
                     ?
                     
                  <div className="itemPage__default">
-                {data.map((itemInfo)=>{
+                    {data.map((itemInfo)=>{
                     return  (
                         <div className="itemPage__cards" key={itemInfo.id}
                         onClick={() => whichItemClicked(itemInfo.id)}>
@@ -159,14 +138,17 @@ function ItemPage() {
         // console.log(id);
         setChildunmount(!childunmount)
         setClickedstate(id)
+        
     }
     function vegetablecheckbox(e){
         setVegetablecheck(!vegetablecheck)
         console.log(vegetablecheck)
+        setWhichsort("Vegetables")
     }
     function fruitscheckbox(e){
         setFruitscheck(!fruitscheck)
         console.log(fruitscheck)
+        setWhichsort("Fruits")
     }
 
     // function childUnmount(){
