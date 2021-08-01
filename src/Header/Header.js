@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from './Header.module.css'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
+// import AddToCartPage from "../AddToCartPage/AddToCartPage.js";
+
 function Header() {
     return (
         <div className={styles.header}>
@@ -16,10 +18,10 @@ function Header() {
                 </div>
             </div>
             <div className={styles.header__addtocart}>
-            <Link  to={{pathname: './AddToCartPage/AddToCartPage.js'}}>
+                {/* <ShoppingCartIcon className={styles.icon}/> */}
+            <Link  to = "/addToCartPage">
                 <ShoppingCartIcon className={styles.icon}/>
             </Link>
-                
             </div>
         </div>
     )
