@@ -24,11 +24,14 @@ function ItemDetail({image, title, price, vender, instock}) {
             </div>
             <div className={styles.addtocardbtn}>
                 <form>
-                    <button type='submit'>Add to cart</button>
+                    <button onClick={addtocartfn} type='submit'>Add to cart</button>
                 </form>
             </div>
         </div>
     )
+    function addtocartfn(e){
+        console.log('you click add to cart')
+    }
 }
 
 export default ItemDetail

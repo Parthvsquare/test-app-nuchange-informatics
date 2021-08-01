@@ -142,12 +142,12 @@ function ItemPage() {
     }
     function vegetablecheckbox(e){
         setVegetablecheck(!vegetablecheck)
-        console.log(vegetablecheck)
+        // console.log(vegetablecheck)
         setWhichsort("Vegetables")
     }
     function fruitscheckbox(e){
         setFruitscheck(!fruitscheck)
-        console.log(fruitscheck)
+        // console.log(fruitscheck)
         setWhichsort("Fruits")
     }
 
