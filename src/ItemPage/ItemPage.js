@@ -8,7 +8,7 @@ import data from '../data/file.json'
 function ItemPage() {
     const [clickedstate, setClickedstate] = useState([0]);
     const [childunmount, setChildunmount] = useState(false);
-    const [vegetablecheck, setVegetablecheck] = useState(true);
+    const [vegetablecheck, setVegetablecheck] = useState(false);
     const [fruitscheck, setFruitscheck] = useState(false);
     // useEffect(() => {
     //     const fetchItems = async() =>
@@ -30,17 +30,76 @@ function ItemPage() {
         
         <div className={styles.itemPage}>
             <div className="itemPage__itemlist">
+                {
+                    vegetablecheck ?
+                    <div className="itemPage__vegies">
                 {data.map((itemInfo)=>{
                     return  (
                         <div className="itemPage__cards" key={itemInfo.id}
                         onClick={() => whichItemClicked(itemInfo.id)}>
-                            <ItemCard image= {itemInfo.image}
+                            {
+                                itemInfo.category === "Vegetables"
+                                ?
+                                <ItemCard image= {itemInfo.image}
                                 title={itemInfo.name}
                                 price={itemInfo.price}
                                 instock={itemInfo.available}/>
+                                :null
+                            }
+                            
                         </div>
                     )
                 })}
+                </div>
+                :
+                null
+                }
+                {
+                    fruitscheck 
+                    ?
+                    <div className="itemPage__fruits">
+                    {data.map((itemInfo)=>{
+                        return  (
+                            <div className="itemPage__cards" key={itemInfo.id}
+                            onClick={() => whichItemClicked(itemInfo.id)}>
+                                {
+                                    itemInfo.category === "Fruits"
+                                    ?
+                                    <ItemCard image= {itemInfo.image}
+                                    title={itemInfo.name}
+                                    price={itemInfo.price}
+                                    instock={itemInfo.available}/>
+                                    :null
+                                }
+                                
+                            </div>
+                        )
+                    })}
+                    </div>
+                    :
+                    null
+                }
+                {
+                    fruitscheck ===false && vegetablecheck ===false 
+                    ?
+                    
+                 <div className="itemPage__default">
+                {data.map((itemInfo)=>{
+                    return  (
+                        <div className="itemPage__cards" key={itemInfo.id}
+                        onClick={() => whichItemClicked(itemInfo.id)}>
+                                <ItemCard image= {itemInfo.image}
+                                title={itemInfo.name}
+                                price={itemInfo.price}
+                                instock={itemInfo.available}/>
+                            
+                        </div>
+                    )
+                })}
+                </div>
+                : null
+                }
+                
             </div>
             <div className="itemPage__right">
                 { childunmount 
